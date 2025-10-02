@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Y&Z Aufbereitung</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+  :root { --accent:#f4c542; --bg-dark:#0f0f0f; --bg-box:#1c1c1c; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg-dark); color:#eee; }
+  header { text-align:center; padding:30px 20px; background: linear-gradient(135deg, #111, #222); overflow:hidden; }
+  header video { width:320px; border-radius:12px; box-shadow:0 0 35px rgba(255,255,255,0.2); animation: float 6s ease-in-out infinite; }
+  @keyframes float { 0%,100%{transform:translateY(0px);} 50%{transform:translateY(-15px);} }
+  header h1 { font-family: 'Montserrat', sans-serif; font-size:3rem; margin-top:20px; background: linear-gradient(90deg,#f4c542,#fff176,#f4c542); -webkit-background-clip:text; -webkit-text-fill-color:transparent; text-shadow:2px 2px 8px rgba(0,0,0,0.7); animation: shine 5s linear infinite; }
+  @keyframes shine {0%{background-position:-200px;}100%{background-position:200px;}}
+  nav { display:flex; justify-content:center; background:#1a1a1a; padding:15px 0; box-shadow:0 4px 12px rgba(0,0,0,0.5); }
+  nav a { margin:0 20px; text-decoration:none; color:#eee; font-weight:bold; position:relative; }
+  nav a::after { content:''; position:absolute; width:0; height:2px; background: var(--accent); bottom:-5px; left:0; transition:0.3s; }
+  nav a:hover::after { width:100%; }
+  section { max-width:1100px; margin:auto; padding:60px 20px; }
+  section h2 { text-align:center; margin-bottom:40px; font-size:2.5rem; color: var(--accent); }
+  .info-boxes { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
+  .box { background: var(--bg-box); padding:25px; border-radius:15px; width:300px; text-align:center; box-shadow:0 8px 25px rgba(244,197,66,0.2); transition: transform 0.4s, box-shadow 0.4s; }
+  .box:hover { transform: translateY(-10px) scale(1.03); box-shadow:0 15px 40px rgba(244,197,66,0.35); }
+  .video-container { text-align:center; margin-top:30px; }
+  .video-container video { width:100%; max-width:800px; border-radius:15px; box-shadow:0 8px 35px rgba(244,197,66,0.3); transition: transform 0.3s; }
+  .video-container video:hover { transform: scale(1.02); }
+  form { background: var(--bg-box); max-width:600px; margin:40px auto; padding:30px; border-radius:15px; box-shadow:0 8px 25px rgba(244,197,66,0.2); }
+  form input, form textarea { width:100%; padding:12px; margin:10px 0; border-radius:8px; border:none; background:#2a2a2a; color:#eee; }
+  form button { width:100%; padding:14px; background: var(--accent); border:none; border-radius:8px; font-weight:bold; cursor:pointer; transition:0.3s; }
+  form button:hover { background:#ffd95b; transform: translateY(-3px); box-shadow:0 6px 20px rgba(244,197,66,0.5); }
+  footer { text-align:center; padding:25px; background:#111; color:#aaa; margin-top:50px; }
+</style>
+</head>
+<body>
+
+<header>
+  <video autoplay muted loop playsinline>
+    <source src="videos/logo-video.mp4" type="video/mp4">
+    Ihr Browser unterstützt kein Video.
+  </video>
+  <h1>Y&Z Aufbereitung</h1>
+</header>
+
+<nav>
+  <a href="#about">Über uns</a>
+  <a href="#services">Leistungen</a>
+  <a href="#video">Video</a>
+  <a href="#contact">Kontakt</a>
+</nav>
+
+<section id="about">
+  <h2>Über uns</h2>
+  <div class="info-boxes">
+    <div class="box">
+      <p>Wir bringen Ihr Fahrzeug mit modernster Technik, höchster Präzision und echter Leidenschaft auf Hochglanz – innen wie außen.</p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2>Unsere Leistungen</h2>
+  <div class="info-boxes">
+    <div class="box"><h3>Außenaufbereitung</h3><p>Handwäsche, Lackpolitur.</p></div>
+    <div class="box"><h3>Innenreinigung</h3><p>Polster-, Leder- & Teppichpflege auf höchstem Niveau.</p></div>
+    <div class="box"><h3>Komplettpaket</h3><p>Innen & außen perfekt gepflegt.</p></div>
+  </div>
+</section>
+
+<section id="video">
+  <h2>Premium Video</h2>
+  <div class="video-container">
+    <video controls>
+      <source src="videos/premium-video.mp4" type="video/mp4">
+      Ihr Browser unterstützt kein Video.
+    </video>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Termin buchen</h2>
+  <form action="danke.html" method="get">
+    <input type="text" name="name" placeholder="Ihr Name" required>
+    <input type="email" name="email" placeholder="Ihre E-Mail" required>
+    <input type="tel" name="telefon" placeholder="Telefonnummer">
+    <input type="date" name="datum" required>
+    <textarea name="nachricht" rows="5" placeholder="Ihre Nachricht oder Terminwunsch"></textarea>
+    <button type="submit">Termin anfragen</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Y&Z Aufbereitung – Alle Rechte vorbehalten</p>
+</footer>
+
+</body>
+</html>
